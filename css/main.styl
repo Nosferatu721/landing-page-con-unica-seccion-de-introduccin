@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap');
+color-violet = hsl(257, 40%, 49%)
+*
+  margin 0
+  padding 0
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+
+h1 
+  font-family: 'Poppins', sans-serif
+
+body 
+  font-size: 1.6rem
+  position relative
+  font-family: 'Open Sans', sans-serif
+  background-color: color-violet
+  height 100vh
+  display: grid
+  grid-template-columns: 60% 40%
+  grid-template-rows: 100px 1fr
+  grid-template-areas "header header" "main main"
+  padding: 2rem
+  color: white
+
+.background-img
+  position: absolute
+  height 100%
+  top: 0
+  left: 0
+  right 0
+  z-index -1
+  object-fit: cover
+
+header 
+  grid-area: header
+  display: flex
+  align-items: center
+  img 
+    width: 200px
+.main
+  grid-area: main
+  display grid
+  grid-template-columns: 60% 40%
+  &-img
+    display: flex
+    align-items: center
+    width: 90%
+    & img 
+      width: 100%
+  &-details
+    padding-top: 6rem
+    padding-right: 2rem
+    position relative
+    &-title
+      margin-bottom: 2rem
+      text-transform: capitalize
+    &-description 
+      margin-bottom: 2rem
+    &-btn 
+      width: 150px
+      border: none
+      border-radius: 2rem
+      padding: 0.8rem
+      cursor pointer
+      box-shadow: 0 2px 8px #00000099
+      border: 1px solid transparent
+      color: color-violet
+      font-family: 'Poppins', sans-serif
+      transition: .2s
+    &-btn:hover
+      box-shadow: 0 2px 8px #00000055
+      border: 1px solid white
+    &-links
+      position absolute
+      bottom: 2rem
+      right: 6rem
+      & a
+        width: 35px
+        height: 35px
+        display: inline-block
+        text-decoration: none
+        border: 1px solid white
+        border-radius: 2rem
+        margin: 0 .5rem
+        color: white
+        transition: .2s
+      & a:hover
+        background: white
+        color: color-violet
+      & i
+        height inherit
+        display flex
+        justify-content: center
+        align-items: center
+        font-size: 1.8rem
+
+@media screen and (max-width: 480px)
+  body 
+    display: block
+  
+  .background-img 
+    width: 100%
+
+  header 
+    margin-bottom: 3rem
+    img
+      width: 150px
+
+  .main
+    display: block
+    &-img
+      width: 80%
+      margin: 0 auto
+    &-details 
+      text-align: center
+      &-btn
+        width: 200px
+      &-links
+        position static
+        margin: 3rem 0
